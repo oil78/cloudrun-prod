@@ -4,7 +4,7 @@ from flask import Flask, render_template_string
 app = Flask(__name__)
 
 SURFBOARDS = [
-    {"name": "The Longboard (Malibu)", "size": "8'0\" - 10'0\"", "shape": "High volume, rounded nose, single fin", "best_for": "Small waves, beginners, effortless gliding"},
+    {"name": "The Longboard (Malibus)", "size": "8'0\" - 10'0\"", "shape": "High volume, rounded nose, single fin", "best_for": "Small waves, beginners, effortless gliding"},
     {"name": "The Funboard / Hybrid", "size": "6'8\" - 7'6\"", "shape": "Wider template, fuller nose", "best_for": "Progressing surfers, messy or small-to-medium surf"},
     {"name": "The Shortboard (Thruster)", "size": "5'8\" - 6'4\"", "shape": "Narrow, pointed nose, rocker curve, 3 fins", "best_for": "Fast, hollow, powerful waves and high-performance maneuvers"},
     {"name": "The Fish", "size": "5'2\" - 6'0\"", "shape": "Short, wide, swallow tail, twin fin setup", "best_for": "Small, weak summer waves where you need speed in minimal pocket"}
