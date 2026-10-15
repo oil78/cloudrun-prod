@@ -16,7 +16,7 @@ metadata:
   name: dev
 description: Development Environment
 run:
-  location: projects/${PROJECT_ID}/locations/us-central1
+  location: projects/prodproject-511713/locations/us-central1
 ---
 apiVersion: deploy.cloud.google.com/v1
 kind: Target
@@ -24,4 +24,4 @@ metadata:
   name: prod
 description: Production Environment (Requires approval gate)
 run:
-  location: projects/${PROJECT_ID}/locations/us-central1
+  location: projects/prodproject-511713/locations/us-central1
