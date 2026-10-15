@@ -1,0 +1,15 @@
+apiVersion: skaffold/v4beta7
+kind: Config
+metadata:
+  name: surf-app-pipeline
+deploy:
+  cloudrun: {}
+profiles:
+  - name: dev
+    manifests:
+      rawYaml:
+        - service-dev.yaml
+  - name: prod
+    manifests:
+      rawYaml:
+        - service-prod.yaml

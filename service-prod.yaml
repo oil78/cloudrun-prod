@@ -1,0 +1,23 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: surf-app-prod
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "1"   # Keeps warm instances to eliminate cold starts in Prod
+        autoscaling.knative.dev/maxScale: "10"  # Scales higher for production traffic
+    spec:
+      containerConcurrency: 80
+      containers:
+      - image: app-image
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "2000m"
+        env:
+        - name: ENVIRONMENT
+          value: "Production (Prod)"
+        - name: APP_VERSION
+          value: "v1.0-prod"

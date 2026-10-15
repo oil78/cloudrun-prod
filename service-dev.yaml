@@ -1,0 +1,23 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: surf-app-dev
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "2"
+    spec:
+      containerConcurrency: 80
+      containers:
+      - image: app-image
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "1m"
+        env:
+        - name: ENVIRONMENT
+          value: "Development (Dev)"
+        - name: APP_VERSION
+          value: "v1.0-dev"
